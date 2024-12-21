@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #333;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <a href="{% url 'home' %}">
+              <img src="{% static 'assets/img/search.png' %}" alt="Salesman Setup Icon">
+
+                <h2>Keyword Finding</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="{% url 'readinginput' %}">
+                <img src="{% static 'assets/img/searching.png' %}" alt="Salesman Setup Icon">
+                <h2>Reading Translation</h2>
+            </a>
+        </div>
+        <!-- আরও div যোগ করতে চাইলে এখানেই লিখুন -->
+    </div>
+</body>
+</html>
